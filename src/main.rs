@@ -1,6 +1,5 @@
 use bevy::prelude::*;
 use bevy::window::WindowMode;
-use template_lib::*;
 
 fn main() {
     App::new()
@@ -12,9 +11,6 @@ fn main() {
             mode: WindowMode::BorderlessFullscreen,
             ..Default::default()
         })
-        // Standard Bevy functionality
         .add_plugins(DefaultPlugins)
-        // Add plugins here
-        .add_plugin(HelloWorldPlugin)
         .run();
 }

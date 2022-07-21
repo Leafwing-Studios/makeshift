@@ -1,13 +1,13 @@
 [package]
-name = "template"
-description = "A Bevy + mdbook enabled template repo to build on."
+name = "makeshift"
+description = "A reinforcement-learning powered construction game about learning to make to do."
 version = "0.0.0"
 authors = ["Leafwing Studios"]
 homepage = "https://leafwing-studios.com"
 repository = "https://github.com/leafwing-studios/template-repo"
 license = "MIT OR Apache-2.0"
 edition = "2021"
-categories = ["games", "game-development"]
+categories = ["games"]
 keywords = ["bevy"]
 exclude = ["assets/**/*", "tools/**/*", ".github/**/*"]
 resolver = "2"
@@ -19,29 +19,5 @@ opt-level = 3
 members = ["./", "tools/ci"]
 
 [dependencies]
-bevy = { version = "0.6", default-features = false, features = ["dynamic"]}
+bevy = { version = "0.7"}
 
-[patch.crates-io]
-# We can override the bevy version with remote or local versions
-# This method causes less pain to downstream users trying to work off your revisions
-#bevy = { git = "https://github.com/bevyengine/bevy" }
-#bevy = { path = "../bevy" }
-
-[dev-dependencies]
-criterion = "0.3"
-# We can use a different feature set of Bevy for our library vs our examples and tests
-bevy = { version = "0.6", default-features = false}
-
-
-[lib]
-name = "template_lib"
-path = "src/lib.rs"
-
-[[bin]]
-name = "template_bin"
-path = "src/main.rs"
-
-[[bench]]
-name = "entity_spawning"
-path = "benches/entity_spawning.rs"
-harness = false

@@ -14,11 +14,6 @@ fn main() {
         .run()
         .expect("Please fix failing tests in output above.");
 
-    // Run doc tests: these are ignored by `cargo test`
-    cmd!("cargo test --doc --workspace")
-        .run()
-        .expect("Please fix failing doc-tests in output above.");
-
     // See if clippy has any complaints.
     // - Type complexity must be ignored because we use huge templates for queries
     cmd!("cargo clippy --workspace --all-targets --all-features -- -D warnings -A clippy::type_complexity -W clippy::doc_markdown")
